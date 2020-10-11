@@ -1,0 +1,26 @@
+#bodys{
+    height: 1080px;
+    margin-top: -10px;
+    padding-top: 10px;
+    background: url('/img/images-product/大理石.jpg') no-repeat;
+    background-size: 100% 100%;
+}
+#blog{
+    background-color:red;
+    background: rgba(255,255,255, 0.5);
+    width: 1000px;
+    position: absolute;
+    margin-left: 14.5%;
+    padding-top: 5px;
+    border-radius: 7px;
+}
+#link{
+    background-color:red;
+    background: rgba(255,255,255, 0.5);
+    width: 340px;
+    height: 700px;
+    margin-left: 67.7%;
+    margin-top: 30px;
+    border-radius: 7px;
+    z-index: -1;
+}

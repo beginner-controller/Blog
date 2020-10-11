@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../fonts/iconfont.css">
+    <link rel="stylesheet" href="css/home.css" type="text/css">
+    <link rel="stylesheet" href="css/head-er.css" type="text/css">
+    <link rel="stylesheet" href="css/blog.css" type="text/css">
+</head>
+<body>
+    <div id="bodys">
+        <!--头部组件-->
+        <head-er></head-er>
+        <article>
+            <!--博客列表组件-->
+            <div id="blog">
+                <span>&nbsp;最新文章</span>
+                <div class="segmentation seg-1"></div>
+                <div class="bloges">
+                    <img :src="meth">
+                </div>
+            </div>
+            <div id="link"></div>
+        </article>
+        <article>
+            <div  id="external"></div>
+        </article>
+    </div>
+     <!--开发环境-->
+     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+     <script>
+         /*导航组件*/
+         Vue.component('head-er',{
+             data: function(){
+                 return{
+                    list:[{
+                        id: 0,
+                        title: '美女',
+                        path: '/img/images-product/bk-0.jpg'
+                    },{
+                        id: 1,
+                        title: '美女',
+                        path: '/img/images-product/bk-1.jpg'
+                    },{
+                        id: 2,
+                        title: '美女',
+                        path: '/img/images-product/bk-2.jpg'
+                    },{
+                        id: 3,
+                        title: '美女',
+                        path: '/img/images-product/bk-3.jpg'
+                    },{
+                        id: 4,
+                        title: '美女',
+                        path: '/img/images-product/bk-4.jpg'
+                    },{
+                        id: 5,
+                        title: '美女',
+                        path: '/img/images-product/bk-5.jpg'
+                    },{
+                        id: 6,
+                        title: '美女',
+                        path: '/img/images-product/bk-6.jpg'
+                    },{
+                        id: 7,
+                        title: '美女',
+                        path: '/img/images-product/bk-7.jpg'
+                    },{
+                        id: 8,
+                        title: '美女',
+                        path: '/img/images-product/bk-8.jpg'
+                    },{
+                        id: 9,
+                        title: '美女',
+                        path: '/img/images-product/bk-9.jpg'
+                    },{
+                        id: 10,
+                        title: '美女',
+                        path: '/img/images-product/bk-10.jpg'
+                    },{
+                        id: 11,
+                        title: '美女',
+                        path: '/img/images-product/bk-11.jpg'
+                    }]
+                 }
+             },
+             template: `
+             <header id="header">
+                <div class="margin">
+                    <span class="head-er">杀生入轮回</span>
+                    <div class="nav nav_home">
+                        <a href="index.html"><span class="iconfont icon-home"></span>首页</a>
+                    </div>
+                    <div class="nav nav_blog">
+                        <a href="#"><span class="iconfont icon-wenzhang"></span>博客</a>
+                        <div class="blogs">
+                            <div class="blogs_auto">
+                                <a href="#">技术型</a>
+                                <a href="#">生活类</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="nav">
+                        <a href="#"><span class="iconfont icon-xiangce"></span>相册</a>
+                    </div>
+                    <div class="nav">
+                        <a href="#"><span class="iconfont icon-shipin"></span>视频</a>
+                    </div>
+                    <div class="nav">
+                        <a href="#"><span class="iconfont icon-shipin"></span>留言板</a>
+                    </div>
+                    <div class="nav">
+                        <a href="#"><span class="iconfont icon-shipin"></span>Demo</a>
+                    </div>
+                    <div class="nav">
+                        <a href="#"><span class="iconfont icon-github"></span>GitHub</a>
+                    </div>
+                    <div class="nav bg">
+                        <a href="#"><span class="iconfont icon-huanbeijing"></span>背景更换</a><br />
+                        <div class="bg-imgs">
+                            <img v-for="item in list" :src="item.path" @click="replace(item.id)" id="img-1">
+                        </div>
+                    </div>
+                    <!--头像-->
+                    <div class="Avatar"></div>
+                </div>
+            </header>
+             `,
+             methods: {
+                 replace: function(id){
+                    document.querySelector("#bodys").style.background = "url('img/images-product/bk-" + id + ".jpg') no-repeat"
+                    document.querySelector("#bodys").style.backgroundSize = "100% 100%"
+                 }
+             }
+        })
+        /*博客简介组件*/
+        Vue.component('blog-er',{
+            data: function(){return{}},
+            template: ``,
+            methods: {}
+        })
+         const bodys = new Vue({
+             el: "#bodys",
+             data: {
+                meth: 'img/blog/vue.jpg'
+             },
+             methods: {
+                 
+             },
+         })
+     </script>
+</body>
+</html>

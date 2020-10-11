@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../fonts/iconfont.css">
+    <!--本页css样式-->
+    <link rel="stylesheet" type="text/css" href="css/index.css">
+</head>
+<body>
+    <div id="app">
+        <div class="navigation">
+            <div class="nav">
+                <span class="iconfont icon-home"></span>
+                <a href="home.html">Home</a>
+            </div>
+            <div class="nav" @click="login">
+                <span class="iconfont icon-denglu"></span>
+                <a href="#">Login</a>
+            </div>
+            <div class="nav">
+                <span class="iconfont icon-liuyan2"></span>
+                <a href="#">Demo</a>
+            </div>
+            <div class="nav">
+                <span class="iconfont icon-liuyan2"></span>
+                <a href="#">LeaveMessage</a>
+            </div>
+            <div class="nav">
+                <span class="iconfont icon-github"></span>
+                <a href="#">GitHub</a>
+            </div>
+        </div>
+        <div class="login-reg">
+            <div class="login-y" @click="transole">
+                <div class="spans">
+                    <span class="s1">欢迎回来!</span><br /><br />
+                    <span style="font-size: 15px;">与我们保持联系，请登录</span><br />
+                    <span style="font-size: 15px;">你的账户</span><br /><br />
+                    <p>登录</p>
+                </div>
+            </div>
+            <div class="reg">
+                <div id="input">
+                    <!--<form action="" method="POST"></form>-->
+                        <p>注册页面</p><br /><br />
+                        <input type="email" class="regs" placeholder="邮箱"><br /><br />
+                        <input type="text" class="regs" placeholder="用户名"><br /><br />
+                        <input type="password" class="regs" placeholder="密码"><br /><br />
+                        <input type="password" class="regs" placeholder="重复密码"><br /><br /><br />
+                        <button @click='reg'>注册</button>
+                </div>
+            </div>
+            <div class="reg-y" @click="transoles">
+                <div class="spans">
+                    <span class="s1">你好,朋友!</span><br /><br />
+                    <span style="font-size: 15px;">开始注册，和我们一起旅</span><br />
+                    <span style="font-size: 15px;">行</span><br /><br />
+                    <p>注册</p>
+                </div>
+            </div>
+            <div class="login">
+                <div id="input">
+                    <form action="" method="POST"></form>
+                        <p>账户登录</p><br /><br /><br />
+                        <input type="email" placeholder="邮箱"><br /><br /><br /><br />
+                        <input type="password" placeholder="密码"><br /><br /><br /><br />
+                        <button @click='ad'>登录</button>
+                </div>
+            </div>
+            <div class="schedule" @click="ad">
+                <div class="add"></div>
+            </div>
+        </div>
+    </div>
+    <!--开发环境-->
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script>
+        const app = new Vue({
+            el: "#app",
+            methods: {
+                transole: function(){
+                    let login_y = document.querySelector('.login-y')
+                    let reg = document.querySelector('.reg')
+                    let login = document.querySelector('.login')
+                    let reg_y = document.querySelector('.reg-y')
+                    login_y.style.display = 'none'
+                    reg.style.display = 'none'
+                    login.style.display = 'block'
+                    reg_y.style.display = 'block'
+                },
+                transoles: function(){
+                    let login_y = document.querySelector('.login-y')
+                    let reg = document.querySelector('.reg')
+                    let login = document.querySelector('.login')
+                    let reg_y = document.querySelector('.reg-y')
+                    login.style.display = 'none'
+                    reg_y.style.display = 'none'
+                    login_y.style.display = 'block'
+                    reg.style.display = 'block'
+                },
+                login: function(){
+                    let login = document.querySelector('.login-reg');
+                    let navigation = document.querySelector('.navigation');
+                    navigation.style.display = 'none'
+                    login.style.display = 'block'
+                },
+                ad: function(){
+                    let login = document.querySelector('.login-reg');
+                    let navigation = document.querySelector('.navigation');
+                    let ad = document.querySelector('.add');
+                    let width = 34;
+                    let id = setInterval(frame,10);
+                    function frame(){
+                        if (width == 100) {
+                            clearInterval(id);
+                            ad.style.width = '34%'
+                            login.style.display = 'none'
+                            navigation.style.display = 'block'
+                        } else {
+                            width++; 
+                            ad.style.width = width + '%'; 
+                        }
+                    }
+                },
+                reg: function(){
+                    let login_y = document.querySelector('.login-y')
+                    let reg = document.querySelector('.reg')
+                    let login = document.querySelector('.login')
+                    let reg_y = document.querySelector('.reg-y')
+                    let reg_s = document.querySelectorAll('.regs')
+                    let navigation = document.querySelector('.navigation')
+                    let ad = document.querySelector('.add')
+                    let width = 34;
+                    let id = setInterval(frame,10);
+                    function frame(){
+                        if (width == 100) {
+                            clearInterval(id);
+                            ad.style.width = '34%'
+                            login_y.style.display = 'none'
+                            reg.style.display = 'none'
+                            for(let i = 0;i < 4;i++){
+                                reg_s[i].value = null
+                            }
+                            /*reg_s.value = null*/
+                            login.style.display = 'block'
+                            reg_y.style.display = 'block'
+                            navigation.style.display = 'none'
+                        } else {
+                            width++; 
+                            ad.style.width = width + '%'; 
+                        }
+                    }
+                }
+            }
+        })
+    </script>
+</body>
+</html>

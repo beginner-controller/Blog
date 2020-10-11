@@ -1,0 +1,20 @@
+#blog span{
+    font-family: "楷体";
+    font-size: 22px;
+    
+}
+.segmentation{
+    display: block;
+    border: 0.01px solid #000;
+    margin-top: 3px;
+}
+.bloges{
+    height: 300px;
+    border-bottom: 2px dashed #fffff0;
+    border-radius: 5px;
+}
+.bloges img{
+    width: 250px;
+    height: 270px;
+    margin: 13px 0px 0px 20px;
+}

@@ -1,0 +1,87 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+#header{
+    height: 60px;
+    line-height: 60px;
+    width: 71%;
+    margin: 10px auto;
+    border-radius: 11px;
+    background-color: #ffffff;
+    background: rgba(255,255,255, 0.5);
+    border-radius: 11px;
+}
+.head-er{
+    margin-left: 110px;
+    font-family: "楷体";
+    font-size: 30px;
+}
+.nav{
+    display: inline-block;
+    font-size: 25px;
+    margin-left: 25px;
+    font-family: "楷体";
+}
+.nav_home{
+    margin-left: 180px;
+}
+a{
+    text-decoration: none;
+    color: #000000;
+}
+.nav_blog{
+    position: relative;
+}
+.nav_blog:hover .blogs{
+    display: block;
+}
+a:hover{
+    color: red;
+}
+.blogs{
+    position: absolute;
+    display: none;
+    border-radius: 7px;
+    background-color: #ffffff;
+    width: 85px;
+    font-family: "楷体";
+    font-size: 22px;
+}
+.blogs_auto{
+    margin-left: 8px;
+}
+.bg{
+    position: relative;
+}
+.bg:hover .bg-imgs{
+    display: block;
+}
+.bg-imgs{
+    width: 1351px;
+    height: 652px;
+    display: none;
+    position: absolute;
+    border-radius: 11px;
+    margin-left: -1193px;
+    background-color: #d3d3d3;
+    opacity: 0.9;
+    z-index: 999;
+}
+.bg-imgs img{
+    width: 313px;
+    height: 176px;
+    margin: 10px 0 0 20px;
+}
+.Avatar{
+    width: 90px;
+    height: 90px;
+    border-radius: 50%;
+    background: url('/img/images-product/Avatar.jpg') no-repeat;
+    background-size: 90px 90px;
+    margin: -60px 0px 0px 10px;
+    transition: all 0.6s;
+}
+.Avatar:hover{
+    transform: rotate(-360deg);
+}

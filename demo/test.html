@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #app{
+            position: relative;
+            width: 300px;
+            height: 10px;
+            background-color: #fff;
+            border: 1px solid #000;
+        }
+        #ad{
+            position: absolute;
+            width: 20px;
+            height: 10px;
+            background-color: red;
+        }
+    </style>
+</head>
+<body>
+    <div id="app"  @click="ad">
+        <div id="ad"></div>
+        <!--<div id="s2"></div>-->
+    </div>
+    <!--开发环境-->
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script>
+        const app = new Vue({
+            el: "#app",
+            methods: {
+                ad: function(){
+                    var ad = document.querySelector('#ad');
+                    var width = 0;
+                    var id = setInterval(frame,10);
+                    function frame(){
+                        if (width == 100) {
+                            clearInterval(id);
+                        } else {
+                            width++; 
+                            ad.style.width = width + '%'; 
+                        }
+                    }
+                    
+                }
+            }
+        })
+    </script>
+</body>
+</html>
